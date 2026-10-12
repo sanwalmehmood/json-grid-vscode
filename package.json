@@ -1,0 +1,76 @@
+{
+  "name": "json-grid-vscode",
+  "displayName": "JSON Grid",
+  "description": "View JSON as nested, expandable tables with GridSync and CSV export.",
+  "version": "0.1.0",
+  "publisher": "sanwal-mehmood",
+  "author": {
+    "name": "Sanwal Mehmood",
+    "email": "you@example.com"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "json",
+    "table",
+    "grid",
+    "viewer",
+    "csv"
+  ],
+  "main": "./src/extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      {
+        "command": "jsonGrid.open",
+        "title": "JSON Grid: Open Grid View",
+        "icon": "$(table)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "jsonGrid.open",
+          "when": "resourceLangId == json || resourceLangId == jsonc",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "jsonGrid.open",
+          "when": "resourceLangId == json || resourceLangId == jsonc",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "jsonGrid.open",
+          "when": "resourceLangId == json || resourceLangId == jsonc",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "jsonGrid.open",
+        "key": "ctrl+alt+g",
+        "mac": "cmd+alt+g",
+        "when": "editorLangId == json || editorLangId == jsonc"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanwalmehmood/json-grid-vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sanwalmehmood/json-grid-vscode/issues"
+  },
+  "homepage": "https://github.com/sanwalmehmood/json-grid-vscode#readme",
+  "license": "MIT"
+}
